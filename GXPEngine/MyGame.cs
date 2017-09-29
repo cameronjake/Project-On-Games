@@ -30,7 +30,7 @@ public class MyGame : Game{
 
     void Update(){
         // Empty
-        if (Input.GetKey(Key.SPACE)){
+        if (Input.GetKeyDown(Key.SPACE)){
             Bullet bullet = new Bullet(player);
             AddChild(bullet);
         }

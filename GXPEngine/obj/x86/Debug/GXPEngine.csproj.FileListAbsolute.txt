@@ -1,0 +1,6 @@
+C:\Users\Cameron\RiderProjects\New Platformer\GXPEngine\bin\Debug\GXPEngine.exe
+C:\Users\Cameron\RiderProjects\New Platformer\GXPEngine\bin\Debug\GXPEngine.pdb
+C:\Users\Cameron\RiderProjects\New Platformer\GXPEngine\obj\x86\Debug\GXPEngine.csprojResolveAssemblyReference.cache
+C:\Users\Cameron\RiderProjects\New Platformer\GXPEngine\obj\x86\Debug\GXPEngine.csproj.CoreCompileInputs.cache
+C:\Users\Cameron\RiderProjects\New Platformer\GXPEngine\obj\x86\Debug\GXPEngine.exe
+C:\Users\Cameron\RiderProjects\New Platformer\GXPEngine\obj\x86\Debug\GXPEngine.pdb

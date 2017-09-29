@@ -77,7 +77,7 @@ public class Character : AnimationSprite{
 
 
         if (OnGround()){
-            y = 640;
+            y = MyGame.groundY[(int)Utils.Clamp(this.x,0,MyGame.main.width-1)];
             Yv = 0;
         }
         else{
@@ -133,6 +133,6 @@ public class Character : AnimationSprite{
     }
 
     public bool OnGround(){
-        return y >= 640;
+        return this.y >= MyGame.groundY[(int) Utils.Clamp(this.x, 0, MyGame.main.width - 1)];
     }
 }

@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Drawing;
 // System contains a lot of default C# libraries 
 using GXPEngine; // GXPEngine contains the engine
 
@@ -8,10 +9,15 @@ public class MyGame : Game{
     public Player player;
     public Enemy enemy;
     public Array groundtiles;
+    private Sprite ground;
+    public static int[] groundY = new int[1920];
 
-    public MyGame() : base(1280, 720, false) // Create a window that's 800x600 and NOT fullscreen
+    public MyGame() : base(1920, 1080, true) // Create a window that's 800x600 and NOT fullscreen
     {
         Background background = new Background();
+        ground = new Sprite("colored_desert_underground.png");
+//        AddChild(ground);
+        getCollisions();
 //		collisionManager = new CollisionManager();
 
 //		background.collisionManager.Add(player);
@@ -27,6 +33,18 @@ public class MyGame : Game{
         return player;
     }
 
+    public void getCollisions(){
+        for (int i = 0; i < Game.main.width; i++){
+            for (int j = 630; j < Game.main.height; j++){
+                Color c = ground.texture.bitmap.GetPixel((int) Utils.Clamp(i, 0, main.width), j);
+                
+                if (c.R == 255 && c.G == 255 && c.B == 255){
+                    groundY[i] =  j;
+                    break;
+                }
+            }
+        }
+    }
 
     void Update(){
         // Empty

@@ -37,6 +37,9 @@
     </Reference>
     <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
+    <Reference Include="TiledSharp, Version=0.10.5537.22615, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\Downloads\TiledSharp.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Camera.cs" />

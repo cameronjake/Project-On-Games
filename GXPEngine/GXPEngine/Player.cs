@@ -4,8 +4,8 @@ using GXPEngine;
 
 public class Player : Character
 {
-    private int NocOrLumi = 1;
-
+    private bool lumi = true;
+    private static int SWITCH_LENGTH = 15000;
     private int health = 100;
 
     public Player(string filename, int cols, int rows, int frames) : base(filename, cols, rows, frames)
@@ -21,25 +21,40 @@ public class Player : Character
         return health;
     }
 
-    public int changeplayer()
+    public void changeplayer()
     {
         
-        NocOrLumi = NocOrLumi * -1;
-        i
+       
         //TODO: link to score system
-        if (NocOrLumi == -1)
+        if (!lumi)
         {
-            ChangeSprite("zombie_tilesheet.png", 9, 3, 24);
-            SetOrigin(40, 110);
-            AddChild(new Timer(80000,));
+            changeToLumi();
+//            AddChild(new Timer(2000,changeToNoc));
+
         }
-        else if (NocOrLumi == 1)
+        else if (lumi)
         {
-            ChangeSprite("player_tilesheet.png", 9, 3, 24);
-            SetOrigin(40, 110);
+            changeToNoc();
+            AddChild(new Timer(SWITCH_LENGTH,changeToLumi));
+//            SetOrigin(40, 110);
         }
-        return NocOrLumi;
     }
+
+    public void changeToNoc(){
+        lumi = false;
+        ChangeSprite("zombie_tilesheet.png",9,3,24);
+        SetOrigin(40, 110);
+
+    }
+
+    public void changeToLumi(){
+        lumi = true;
+        ChangeSprite("player_tilesheet.png", 9, 3, 24);
+        SetOrigin(40, 110);
+
+
+    }
+    
 
     void Update()
     {

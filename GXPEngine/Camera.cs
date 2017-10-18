@@ -1,11 +1,6 @@
 ﻿using GXPEngine;
 
 
-    public class Camera{
-
-        public Camera(){
-            
-        }
-        
-        
-    }
+public class Camera{
+    
+}

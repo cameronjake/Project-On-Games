@@ -46,6 +46,7 @@
     <Compile Include="GXPEngine\Enemy.cs" />
     <Compile Include="GXPEngine\GroundSprite.cs" />
     <Compile Include="GXPEngine\Player.cs" />
+    <Compile Include="GXPEngine\Timer.cs" />
     <Compile Include="Layer.cs" />
     <Compile Include="Map.cs" />
     <Compile Include="MyGame.cs" />

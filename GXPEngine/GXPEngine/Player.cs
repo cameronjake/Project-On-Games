@@ -1,4 +1,5 @@
 ﻿using System;
+
 using GXPEngine;
 
 public class Player : Character
@@ -24,11 +25,13 @@ public class Player : Character
     {
         
         NocOrLumi = NocOrLumi * -1;
+        i
         //TODO: link to score system
         if (NocOrLumi == -1)
         {
             ChangeSprite("zombie_tilesheet.png", 9, 3, 24);
             SetOrigin(40, 110);
+            AddChild(new Timer(80000,));
         }
         else if (NocOrLumi == 1)
         {

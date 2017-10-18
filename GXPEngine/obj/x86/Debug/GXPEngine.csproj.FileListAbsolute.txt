@@ -4,3 +4,10 @@ C:\Users\Cameron\RiderProjects\New Platformer\GXPEngine\obj\x86\Debug\GXPEngine.
 C:\Users\Cameron\RiderProjects\New Platformer\GXPEngine\obj\x86\Debug\GXPEngine.csproj.CoreCompileInputs.cache
 C:\Users\Cameron\RiderProjects\New Platformer\GXPEngine\obj\x86\Debug\GXPEngine.exe
 C:\Users\Cameron\RiderProjects\New Platformer\GXPEngine\obj\x86\Debug\GXPEngine.pdb
+C:\Users\Cameron\RiderProjects\Project-On-Games\GXPEngine\bin\Debug\GXPEngine.exe
+C:\Users\Cameron\RiderProjects\Project-On-Games\GXPEngine\bin\Debug\GXPEngine.pdb
+C:\Users\Cameron\RiderProjects\Project-On-Games\GXPEngine\obj\x86\Debug\GXPEngine.csprojResolveAssemblyReference.cache
+C:\Users\Cameron\RiderProjects\Project-On-Games\GXPEngine\obj\x86\Debug\GXPEngine.csproj.CoreCompileInputs.cache
+C:\Users\Cameron\RiderProjects\Project-On-Games\GXPEngine\obj\x86\Debug\GXPEngine.exe
+C:\Users\Cameron\RiderProjects\Project-On-Games\GXPEngine\obj\x86\Debug\GXPEngine.pdb
+C:\Users\Cameron\RiderProjects\Project-On-Games\GXPEngine\bin\Debug\FuncWorks.XNA.XTiled.dll

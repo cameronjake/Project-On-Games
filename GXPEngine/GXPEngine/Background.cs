@@ -1,21 +1,29 @@
 ﻿using System;
 using System.Collections;
 using GXPEngine;
+using FuncWorks.XNA.XTiled;
+//using TiledSharp;
 
-public class Background{
+public class Background : GameObject{
     public CollisionManager collisionManager;
     public static Array groundtiles;
+
+
+    Sprite backgroundSprite;
 
     public Background(){
         collisionManager = new CollisionManager();
 
-
-        Sprite backgroundSprite = new Sprite("colored_desert.png") {
+        
+       
+        
+        backgroundSprite = new Sprite("colored_desert.png"){
             x = 0,
             y = 0
         };
         Game.main.AddChild(backgroundSprite);
 
+       
 
 //        for (int i = 0; i < Game.main.width; i++){
 //            for (int j = 0; j < Game.main.height; j++){
@@ -53,4 +61,15 @@ public class Background{
 //            }
 //        }
     }
+
+//    public void StayOnScreen(){
+//        if (backgroundSprite.x > Game.main.width + backgroundSprite.width * 0.5f){
+//            backgroundSprite.x = -backgroundSprite.width * 0.5f;
+//        }
+//    }
+
+//    public void Update(){
+//        StayOnScreen();
+//        backgroundSprite.x += -5;
+//    }
 }

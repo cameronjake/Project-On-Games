@@ -20,10 +20,11 @@ public class Player : Character
         return health;
     }
 
-    public void changeplayer()
+    public int changeplayer()
     {
+        
         NocOrLumi = NocOrLumi * -1;
-
+        //TODO: link to score system
         if (NocOrLumi == -1)
         {
             ChangeSprite("zombie_tilesheet.png", 9, 3, 24);
@@ -34,6 +35,7 @@ public class Player : Character
             ChangeSprite("player_tilesheet.png", 9, 3, 24);
             SetOrigin(40, 110);
         }
+        return NocOrLumi;
     }
 
     void Update()

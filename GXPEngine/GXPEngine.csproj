@@ -32,15 +32,22 @@
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
+    <Reference Include="FuncWorks.XNA.XTiled, Version=0.8.1.1, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\Downloads\FuncWorks.XNA.XTiled.dll</HintPath>
+    </Reference>
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Camera.cs" />
     <Compile Include="GXPEngine\Background.cs" />
     <Compile Include="GXPEngine\Bullet.cs" />
     <Compile Include="GXPEngine\Character.cs" />
     <Compile Include="GXPEngine\Enemy.cs" />
     <Compile Include="GXPEngine\GroundSprite.cs" />
     <Compile Include="GXPEngine\Player.cs" />
+    <Compile Include="Layer.cs" />
+    <Compile Include="Map.cs" />
     <Compile Include="MyGame.cs" />
     <Compile Include="GXPEngine\Canvas.cs" />
     <Compile Include="GXPEngine\Game.cs" />
@@ -68,6 +75,7 @@
     <Compile Include="GXPEngine\Utils\MouseHandler.cs" />
     <Compile Include="GXPEngine\Utils\Time.cs" />
     <Compile Include="GXPEngine\Utils\Utils.cs" />
+    <Compile Include="Tileset.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="GXPEngine\" />

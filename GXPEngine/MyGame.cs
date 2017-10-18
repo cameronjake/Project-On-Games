@@ -37,10 +37,10 @@ public class MyGame : Game{
         AddChild(cameron);
         
         
-        _map = new TmxMap("gamemap.tmx");
-        _version = _map.Version;
-        _myTileset = _map.Tilesets["myTileset"];
-        _myLayer = _map.Layers[3];
+//        _map = new TmxMap("gamemap.tmx");
+//        _version = _map.Version;
+//        _myTileset = _map.Tilesets["myTileset"];
+//        _myLayer = _map.Layers[3];
         
         
 
@@ -77,7 +77,7 @@ public class MyGame : Game{
                 float y = (float)Math.Floor(i / (double)_map.Width) * _map.TileHeight;
 
                 Rectangle tilesetRec = new Rectangle(_myTileset.TileWidth * tileFrame, _myTileset.TileHeight * row, 32, 32);
-                Sprite sprite = new Sprite(tileFrame);
+//                Sprite sprite = new Sprite(tileFrame);
 //                spriteBatch.Draw(_tileset, new Rectangle((int)x, (int)y, 32, 32), tilesetRec, Color.White);
             }
         }    }

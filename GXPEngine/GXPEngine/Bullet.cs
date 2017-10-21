@@ -26,7 +26,7 @@ public class Bullet : AnimationSprite
             counter = counter - timeOutBetweenFrames;
             NextFrame();
         }
-        Move(direction * 8, 0);
+        Move(direction * 15, 0);
 
         if (x > Game.main.width || x < 0 || y > Game.main.height || y < 0)
         {

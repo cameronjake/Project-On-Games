@@ -48,7 +48,9 @@
     <Compile Include="GXPEngine\Character.cs" />
     <Compile Include="GXPEngine\Enemy.cs" />
     <Compile Include="GXPEngine\GroundSprite.cs" />
+    <Compile Include="GXPEngine\HUD.cs" />
     <Compile Include="GXPEngine\Player.cs" />
+    <Compile Include="GXPEngine\TextBoard.cs" />
     <Compile Include="GXPEngine\Timer.cs" />
     <Compile Include="Layer.cs" />
     <Compile Include="Map.cs" />

@@ -7,6 +7,8 @@ public class Player : Character
     private bool lumi = true;
     private static int SWITCH_LENGTH = 15000;
     private int health = 100;
+    public static int souls = 0;
+    private int _nocCost = -2;
 
     public Player(string filename, int cols, int rows, int frames) : base(filename, cols, rows, frames)
     {
@@ -25,18 +27,19 @@ public class Player : Character
     {
         
        
-        //TODO: link to score system
         if (!lumi)
         {
             changeToLumi();
-//            AddChild(new Timer(2000,changeToNoc));
+          AddChild(new Timer(2000,changeToNoc));
 
         }
         else if (lumi)
         {
             changeToNoc();
+            souls-=2;
+            Console.WriteLine("Souls: " + souls);
             AddChild(new Timer(SWITCH_LENGTH,changeToLumi));
-//            SetOrigin(40, 110);
+            SetOrigin(40, 110);
         }
     }
 
@@ -54,6 +57,11 @@ public class Player : Character
 
 
     }
+
+    public int GetSouls()
+    {
+        return souls;
+    }
     
 
     void Update()
@@ -62,4 +70,5 @@ public class Player : Character
 
         base.Update();
     }
+    
 }

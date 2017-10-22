@@ -9,6 +9,7 @@ public class MyGame : Game{
     public CollisionManager collisionManager;
     public Player player;
     public Enemy enemy;
+    public Enemy enemy2;
     public Array groundtiles;
     private Sprite ground;
     private TmxMap _map;
@@ -35,6 +36,9 @@ public class MyGame : Game{
         AddChild(player);
         enemy = new Enemy("zombie_tilesheet.png", 9, 3, 24);
         AddChild(enemy);
+        enemy2 = new Enemy("zombie_tilesheet.png", 9, 3, 24);
+        AddChild(enemy2);
+        enemy2.x = 60;
         Camera cameron  = new Camera(player);
         AddChild(cameron);
         _hud = new HUD(player);

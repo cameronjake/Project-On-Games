@@ -55,7 +55,6 @@ public class MyGame : Game{
 //    }
     public Character GetPlayer(){
         return player;
-        
     }
 
     protected void Loadcontent(){
@@ -116,13 +115,9 @@ public class MyGame : Game{
             else
             {
                 break;
-            }
-
-
-
-
+            }            
         }
-        //check if tab key is pushed, then change player
+        //check if tab key is pushed, then change player as long as souls is more than or equal to two
     }
 
     void switchCharacter(){

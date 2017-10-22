@@ -29,7 +29,8 @@ public class Enemy : Character{
         base.Update();
     }
 
-    public void MoveToPlayer(){
+    public void MoveToPlayer()
+    {
         Player player = Game.main.GetPlayer();
         if (this.x > player.x){
             float distance = x - player.x;

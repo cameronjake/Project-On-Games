@@ -106,10 +106,22 @@ public class MyGame : Game{
             Bullet bullet = new Bullet(player);
             AddChild(bullet);
         }
-        if (Input.GetKeyDown(Key.TAB)){
-            switchCharacter();
-        }
+        
+        while (Player.souls >= 2)
+        {
+            if (Input.GetKeyDown(Key.TAB))
+            {
+                switchCharacter();
+            }
+            else
+            {
+                break;
+            }
 
+
+
+
+        }
         //check if tab key is pushed, then change player
     }
 

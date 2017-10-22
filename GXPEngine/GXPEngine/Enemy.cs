@@ -23,7 +23,7 @@ public class Enemy : Character{
         Console.WriteLine(health);
         if (health <= 0){
             Destroy();
-            Player.souls+=2;
+            Player.souls+=1;
             Console.WriteLine("Souls: " + Player.souls);
         }
         base.Update();

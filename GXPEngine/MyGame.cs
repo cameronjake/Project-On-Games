@@ -16,7 +16,9 @@ public class MyGame : Game{
     private TmxLayer _myLayer;
     private String _version;
     private bool delay = false;
+    private HUD _hud;
     public static int[] groundY = new int[1920];
+    
 //    Rectangle mapView;
 //    Map map;
     public MyGame() : base(1920, 1080, true) // Create a window that's 800x600 and NOT fullscreen
@@ -35,6 +37,8 @@ public class MyGame : Game{
         AddChild(enemy);
         Camera cameron  = new Camera(player);
         AddChild(cameron);
+        _hud = new HUD(player);
+        AddChild(_hud);
         
         
 //        _map = new TmxMap("gamemap.tmx");
@@ -101,11 +105,19 @@ public class MyGame : Game{
             Bullet bullet = new Bullet(player);
             AddChild(bullet);
         }
-        if (Input.GetKeyDown(Key.TAB)){
-            switchCharacter();
+        
+        while (Player.souls >= 2)
+        {
+            if (Input.GetKeyDown(Key.TAB))
+            {
+                switchCharacter();
+            }
+            else
+            {
+                break;
+            }            
         }
-
-        //check if tab key is pushed, then change playerd
+        //check if tab key is pushed, then change player as long as souls is more than or equal to two
     }
 
     void switchCharacter(){

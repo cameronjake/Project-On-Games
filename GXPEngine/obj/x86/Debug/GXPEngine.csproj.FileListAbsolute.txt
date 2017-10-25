@@ -16,3 +16,8 @@ C:\Users\Robert Day O Connor\RiderProjects\Project-On-Games\GXPEngine\bin\Debug\
 C:\Users\Robert Day O Connor\RiderProjects\Project-On-Games\GXPEngine\obj\x86\Debug\GXPEngine.csprojResolveAssemblyReference.cache
 C:\Users\Robert Day O Connor\RiderProjects\Project-On-Games\GXPEngine\obj\x86\Debug\GXPEngine.exe
 C:\Users\Robert Day O Connor\RiderProjects\Project-On-Games\GXPEngine\obj\x86\Debug\GXPEngine.pdb
+C:\Users\Cameron\RiderProjects\Project-On-Games\GXPEngine\bin\Debug\TiledSharp.dll
+C:\Users\Cameron\RiderProjects\Project-On-Games\GXPEngine\bin\Debug\GXPEngine.exe.manifest
+C:\Users\Cameron\RiderProjects\Project-On-Games\GXPEngine\bin\Debug\GXPEngine.application
+C:\Users\Cameron\RiderProjects\Project-On-Games\GXPEngine\obj\x86\Debug\GXPEngine.exe.manifest
+C:\Users\Cameron\RiderProjects\Project-On-Games\GXPEngine\obj\x86\Debug\GXPEngine.application

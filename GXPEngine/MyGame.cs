@@ -113,7 +113,7 @@ public class MyGame : Game{
         if (Input.GetKeyDown(Key.SPACE)){
             Bullet bullet = new Bullet(player);
             AddChild(bullet);
-            player.SetFrame(33);
+            player.SetFrame(32);
             
         }
         

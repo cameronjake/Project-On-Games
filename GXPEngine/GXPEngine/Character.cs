@@ -4,7 +4,7 @@ using GXPEngine.Core;
 
 public class Character : AnimationSprite{
     private int health = 100;
-    public int Xv;
+    public float Xv;
     private float xv;
     private int Movespeed = 5;
     readonly float gravity = 0.98f;
@@ -66,6 +66,7 @@ public class Character : AnimationSprite{
         if (GetType() == typeof(Player)){
             Xv = (Convert.ToInt32(Input.GetKey(Key.D)) - Convert.ToInt32(Input.GetKey(Key.A))) * Movespeed;
         }
+        
 
         x += Xv;
 
@@ -77,7 +78,7 @@ public class Character : AnimationSprite{
 
 
         if (OnGround()){
-            y = MyGame.groundY[(int)Utils.Clamp(this.x,0,MyGame.main.width-1)];
+            y = MyGame.groundY[(int) Utils.Clamp(this.x, 0, MyGame.main.width - 1)];
             Yv = 0;
         }
         else{
@@ -93,11 +94,12 @@ public class Character : AnimationSprite{
             }
         }
 
-        if (x > Game.main.width + 50){
-            x = -50;
+        if (x > Game.main.width - 32){
+            x = Game.main.width - 31;
         }
-        else if (x < -50){
-            x = Game.main.width + 40;
+        else if (x < 31){
+//            x = Game.main.width + 40;
+            x = 32;
         }
     }
 
@@ -107,15 +109,15 @@ public class Character : AnimationSprite{
             if (y >= GameObj.y){
                 y = GameObj.y;
             }
-//            else if (y == GameObj.y)
-//            {
-//                y = GameObj.y;
-//            }
-//            else if (y > GameObj.y)
-//            {
-//                y = GameObj.y;
-//            }
-//            Console.WriteLine("hit!");
+            else if (y == GameObj.y)
+            {
+                y = GameObj.y;
+            }
+            else if (y > GameObj.y)
+            {
+                y = GameObj.y;
+            }
+            Console.WriteLine("hit!");
         }
         if (GameObj is Sprite){ }
     }

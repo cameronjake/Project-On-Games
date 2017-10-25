@@ -11,7 +11,9 @@ using System.Drawing;
 
         public void SetText(string text)
         {
-              graphics.Clear(Color.LightSkyBlue);
+              graphics.Clear(Color.Transparent);
               graphics.DrawString(text, SystemFonts.DefaultFont, Brushes.Black, 0, 0);
+            
+//       
         }
     }

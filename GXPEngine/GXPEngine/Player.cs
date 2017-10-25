@@ -14,7 +14,7 @@ public class Player : Character
     {
         x = Game.main.width / 2;
         y = Game.main.height / 2;
-        SetOrigin(40, 110);
+        SetOrigin(64,128);
         SetFrame(0);
     }
 
@@ -62,7 +62,10 @@ public class Player : Character
     {
         return souls;
     }
-    
+
+    public float getX(){
+        return x;
+    }
 
     void Update()
     {

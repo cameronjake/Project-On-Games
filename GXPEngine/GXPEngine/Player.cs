@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 
 using GXPEngine;
 
@@ -52,7 +52,7 @@ public class Player : Character
 
     public void changeToLumi(){
         lumi = true;
-        ChangeSprite("player_tilesheet.png", 9, 3, 24);
+        ChangeSprite("player_tilesheet.png", 8, 4, 33);
         SetOrigin(40, 110);
 
 

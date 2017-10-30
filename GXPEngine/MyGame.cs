@@ -32,7 +32,7 @@ public class MyGame : Game{
 
 //		background.collisionManager.Add(player);
 //		background.collisionManager.GetCurrentCollisions(player);
-        player = new Player("lumi-spritesheet.png", 8, 4, 33);
+        player = new Player("player_tilesheet.png", 8, 4, 33);
         AddChild(player);
         enemy = new Enemy("zombie_tilesheet.png", 9, 3, 24);
         AddChild(enemy);

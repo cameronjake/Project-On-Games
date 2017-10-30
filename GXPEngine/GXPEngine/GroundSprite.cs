@@ -5,7 +5,7 @@ using GXPEngine;
     {
         public GroundSprite(String filename) : base(filename)
         {
-            
+//            SetOrigin(64,64);
         }
         
         

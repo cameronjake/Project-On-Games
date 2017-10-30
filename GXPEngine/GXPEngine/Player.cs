@@ -69,7 +69,7 @@ public class Player : Character
 
     void Update()
     {
-        Console.WriteLine("X: " + x + " Y: " + y);
+//        Console.WriteLine("X: " + x + " Y: " + y);
 
         base.Update();
     }

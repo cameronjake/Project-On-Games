@@ -33,6 +33,8 @@ public class MyGame : Game{
 //		background.collisionManager.Add(player);
 //		background.collisionManager.GetCurrentCollisions(player);
         player = new Player("player_tilesheet.png", 8, 4, 33);
+        player.x = 500;
+        player.y = 100;
         AddChild(player);
         enemy = new Enemy("zombie_tilesheet.png", 9, 3, 24);
         AddChild(enemy);
@@ -43,6 +45,8 @@ public class MyGame : Game{
         AddChild(cameron);
         _hud = new HUD(player);
         AddChild(_hud);
+        addStars();
+
         
         
         _map = new TmxMap("gamemap.tmx");
@@ -68,6 +72,18 @@ public class MyGame : Game{
         
     }
 
+    public void addStars(){
+        Random rnd = new Random(Guid.NewGuid().GetHashCode());
+        for (int i = 0; i < 500; i++){
+            
+
+            Star star = new Star("star.png");
+            
+           
+            AddChild(star);
+        }
+    }
+    
     public void draw(){
         for (var i = 0; i < _map.Layers[3].Tiles.Count; i++)
         {
@@ -85,7 +101,8 @@ public class MyGame : Game{
                 float y1 = (float)Math.Floor(i / (double)_map.Width) * _map.TileHeight;
                 GroundSprite sprite = new GroundSprite(_myTileset.Tiles[tileFrame].Image.Source){
                     x = x1,
-                    y = y1 
+                    y = y1,
+                
                 };
                 AddChild(sprite);
 }

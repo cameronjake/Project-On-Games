@@ -78,7 +78,7 @@ public class Character : AnimationSprite{
 
 
         if (OnGround()){
-            y = MyGame.groundY[(int) Utils.Clamp(this.x, 0, MyGame.main.width - 1)];
+//            y = MyGame.groundY[(int) Utils.Clamp(this.x, 0, MyGame.main.width - 1)];
             Yv = 0;
         }
         else{
@@ -106,18 +106,18 @@ public class Character : AnimationSprite{
 
     public void OnCollision(GameObject GameObj){
         if (GameObj is GroundSprite){
-            if (y >= GameObj.y){
-                y = GameObj.y;
+            if (y < GameObj.y +63){
+                y = GameObj.y-65;
             }
-            else if (y == GameObj.y)
-            {
-                y = GameObj.y;
+            if (x >= GameObj.x && x <= GameObj.x +32){
+                x = GameObj.x - 1;
+            }else if (x >= GameObj.x && x <= GameObj.x + 64){
+                x = GameObj.x + 65;
             }
-            else if (y > GameObj.y)
-            {
-                y = GameObj.y;
-            }
-            Console.WriteLine("hit!");
+            
+            
+            
+//            Console.WriteLine("x: " + GameObj.x + " y: " + GameObj.y);
         }
         if (GameObj is Sprite){ }
     }

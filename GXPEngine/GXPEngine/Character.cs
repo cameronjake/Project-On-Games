@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing.Drawing2D;
 using GXPEngine;
 using GXPEngine.Core;
 
@@ -13,48 +14,25 @@ public class Character : AnimationSprite{
     private bool jump;
     private bool onground;
     public int direction = -1;
+    private int animationDrawFrames;
+    private int step;
 
     public Character(String filename, int cols, int rows, int frames) : base(filename, cols, rows, frames){
         SetFrame(20);
+
+        animationDrawFrames = 16;
+        step = 0;
     }
 
-    public void Update(){
-        if (Yv < 0){
-            SetFrame(20);
-//            this.changeFromTexture("player_jump.png");
+    public void Update()
+    {
+        step = step + 1;
+        if (step > animationDrawFrames)
+        {
+            NextFrame();
+            step = 0;
         }
-        else if (Yv > 0){
-            SetFrame(4);
-//            this.changeFromTexture("player_fall.png");
-        }
-        else if (Yv == 0 && Xv == 0){
-            SetFrame(0);
-//            this.changeFromTexture("player_idle.png");
-        }
-        else if (Xv < 0 && Xv > -4){
-            SetFrame(19);
-//            this.changeFromTexture("player_walk1.png");
-        }
-        else if (Xv < 0){
-            if (x / 10 % 2 == 0){
-                SetFrame(10);
-            }
-            else if (x / 10 % 2 != 0){
-                SetFrame(9);
-            }
-            //            this.changeFromTexture("player_walk2.png");
-        }
-        else if (Xv > 0){
-            if (x / 10 % 2 == 0){
-                SetFrame(10);
-            }
-            else if (x / 10 % 2 != 0){
-                SetFrame(9);
-            }
 
-            //            this.changeFromTexture("player_walk2.png");
-        }
-        
 
 //        if (GetType() == typeof(Player)){
 //            Xv = (Convert.ToInt32(Input.GetKey(Key.D)) - Convert.ToInt32(Input.GetKey(Key.A))) * Movespeed;

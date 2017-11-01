@@ -63,18 +63,18 @@ public class Character : AnimationSprite{
             direction = 1;
         }
 
-        if (GetType() == typeof(Player)){
-            Xv = (Convert.ToInt32(Input.GetKey(Key.D)) - Convert.ToInt32(Input.GetKey(Key.A))) * Movespeed;
-        }
+//        if (GetType() == typeof(Player)){
+//            Xv = (Convert.ToInt32(Input.GetKey(Key.D)) - Convert.ToInt32(Input.GetKey(Key.A))) * Movespeed;
+//        }
         
 
-        x += Xv;
+//        x += Xv;
 
-        if (xv < Xv){
-            xv += 0.1f;
-        }
+//        if (xv < Xv){
+//            xv += 0.1f;
+//        }
         y += Yv;
-        x += Xv;
+//        x += Xv;
 
 
         if (OnGround()){
@@ -109,11 +109,11 @@ public class Character : AnimationSprite{
             if (y < GameObj.y +63){
                 y = GameObj.y-65;
             }
-            if (x >= GameObj.x && x <= GameObj.x +32){
-                x = GameObj.x - 1;
-            }else if (x >= GameObj.x && x <= GameObj.x + 64){
-                x = GameObj.x + 65;
-            }
+//            if (x >= GameObj.x && x <= GameObj.x +32){
+//                x = GameObj.x - 1;
+//            }else if (x >= GameObj.x && x <= GameObj.x + 64){
+//                x = GameObj.x + 65;
+//            }
             
             
             

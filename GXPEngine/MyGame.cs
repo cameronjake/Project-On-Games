@@ -24,7 +24,7 @@ public class MyGame : Game{
 //    Map map;
     public MyGame() : base(1920, 1080, false) // Create a window that's 800x600 and NOT fullscreen
     {
-        Background background = new Background();
+//        Background background = new Background();
         ground = new Sprite("colored_desert_underground.png");
 //        AddChild(ground);
         getCollisions();
@@ -74,7 +74,7 @@ public class MyGame : Game{
 
     public void addStars(){
         Random rnd = new Random(Guid.NewGuid().GetHashCode());
-        for (int i = 0; i < 500; i++){
+        for (int i = 0; i < 1000; i++){
             
 
             Star star = new Star("star.png");
@@ -99,11 +99,7 @@ public class MyGame : Game{
 
                 float x1 = (i % _map.Width) * _map.TileWidth;
                 float y1 = (float)Math.Floor(i / (double)_map.Width) * _map.TileHeight;
-                GroundSprite sprite = new GroundSprite(_myTileset.Tiles[tileFrame].Image.Source){
-                    x = x1,
-                    y = y1,
-                
-                };
+                GroundSprite sprite = new GroundSprite(_myTileset.Tiles[tileFrame].Image.Source, x1, y1);
                 AddChild(sprite);
 }
         }    }

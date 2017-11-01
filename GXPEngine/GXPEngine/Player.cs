@@ -10,7 +10,7 @@ public class Player : Character
     public static int souls = 0;
     private int _nocCost = -2;
 
-    public Player(string filename, int cols, int rows, int frames) : base(filename, cols, rows, frames)
+    public  Player(string filename, int cols, int rows, int frames) : base(filename, cols, rows, frames)
     {
         x = Game.main.width / 2;
         y = Game.main.height / 2;

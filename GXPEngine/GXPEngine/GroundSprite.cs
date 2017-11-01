@@ -17,24 +17,24 @@ public class GroundSprite : Sprite{
         Xv = (Convert.ToInt32(Input.GetKey(Key.A)) - Convert.ToInt32(Input.GetKey(Key.D))) * Movespeed;
         x += Xv;
 
-        if (OnGround()){
-//            y = MyGame.groundY[(int) Utils.Clamp(this.x, 0, MyGame.main.width - 1)];
-            Yv = 0;
-        }
-        else{
-            Yv += gravity;
-        }
-        if (Input.GetKeyDown(Key.W)){
-            Yv = -23;
-        }
-        if (Yv > 0){
-            Yv -= gravity;
-            y -= Yv;
-        }
-
-        else{
-            Yv += gravity;
-        }
+//        if (OnGround()){
+////            y = MyGame.groundY[(int) Utils.Clamp(this.x, 0, MyGame.main.width - 1)];
+//            Yv = 0;
+//        }
+//        else{
+//            Yv += gravity;
+//        }
+//        if (Input.GetKeyDown(Key.W)){
+//            Yv = -23;
+//        }
+//        if (Yv > 0){
+//            Yv -= gravity;
+//            y -= Yv;
+//        }
+//
+//        else{
+//            Yv += gravity;
+//        }
         
         if (Xv > 0){
             

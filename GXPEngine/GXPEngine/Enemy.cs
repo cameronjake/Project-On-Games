@@ -13,7 +13,7 @@ public class Enemy : Character{
         SetFrame(0);
     }
 
-    public void getHit(){
+    public new void getHit(){
         this.health--;
         Console.WriteLine("Health: " + health);
     }

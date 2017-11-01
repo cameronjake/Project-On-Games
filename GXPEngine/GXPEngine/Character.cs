@@ -56,14 +56,14 @@ public class Character : AnimationSprite{
             Yv += gravity;
         }
 
-//        if (OnGround()){
-//            if (GetType() == typeof(Player)){
-//                if (Input.GetKey(Key.W)){
-//                    Console.WriteLine("jump");
-//                    Jump();
-//                }
-//            }
-//        }
+        if (OnGround()){
+            if (GetType() == typeof(Player)){
+                if (Input.GetKey(Key.W)){
+                    Console.WriteLine("jump");
+                    Jump();
+                }
+            }
+        }
 
         if (x > Game.main.width - 32){
             x = Game.main.width - 31;
@@ -77,10 +77,12 @@ public class Character : AnimationSprite{
 
     public void OnCollision(GameObject GameObj){
         if (GameObj is GroundSprite){
-            if (y < GameObj.y +65){
+            if (y < GameObj.y + 65){
                 y = GameObj.y;
                 onground = true;
             }
+            else{
+                onground = false;}
             if (x >= GameObj.x && x <= GameObj.x +32){
                 x = GameObj.x-1;
             }else if (x >= GameObj.x && x <= GameObj.x + 64){

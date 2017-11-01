@@ -33,8 +33,8 @@ public class GroundSprite : Sprite{
 //        }
     }
 
-    public bool onGround(){
-        
+    public bool OnGround(){
+        return true;
     }
     
 }

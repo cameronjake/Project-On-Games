@@ -7,7 +7,7 @@ using GXPEngine; // GXPEngine contains the engine
 
 public class MyGame : Game{
     public CollisionManager collisionManager;
-    public Player player;
+    public static Player player;
     public Enemy enemy;
     public Enemy enemy2;
     public Array groundtiles;
@@ -73,7 +73,7 @@ public class MyGame : Game{
     }
 
     public void addStars(){
-        Random rnd = new Random(Guid.NewGuid().GetHashCode());
+//        Random rnd = new Random();
         for (int i = 0; i < 1000; i++){
             
 
@@ -155,6 +155,10 @@ public class MyGame : Game{
 
     }
 
+    public Player getPlayer(){
+        return player;
+    }
+    
     void changeDelay(){
         delay = false;
     }

@@ -12,7 +12,7 @@ public class Character : AnimationSprite{
     private float yv;
     private bool jump;
     private bool onground;
-    private int direction = -1;
+    public int direction = -1;
 
     public Character(String filename, int cols, int rows, int frames) : base(filename, cols, rows, frames){
         SetFrame(20);
@@ -54,14 +54,7 @@ public class Character : AnimationSprite{
 
             //            this.changeFromTexture("player_walk2.png");
         }
-        if (Xv < 0){
-            Mirror(true, false);
-            direction = -1;
-        }
-        else if (Xv > 0){
-            Mirror(false, false);
-            direction = 1;
-        }
+        
 
 //        if (GetType() == typeof(Player)){
 //            Xv = (Convert.ToInt32(Input.GetKey(Key.D)) - Convert.ToInt32(Input.GetKey(Key.A))) * Movespeed;
@@ -85,14 +78,14 @@ public class Character : AnimationSprite{
             Yv += gravity;
         }
 
-        if (OnGround()){
-            if (GetType() == typeof(Player)){
-                if (Input.GetKey(Key.W)){
-                    Console.WriteLine("jump");
-                    Jump();
-                }
-            }
-        }
+//        if (OnGround()){
+//            if (GetType() == typeof(Player)){
+//                if (Input.GetKey(Key.W)){
+//                    Console.WriteLine("jump");
+//                    Jump();
+//                }
+//            }
+//        }
 
         if (x > Game.main.width - 32){
             x = Game.main.width - 31;
@@ -106,14 +99,15 @@ public class Character : AnimationSprite{
 
     public void OnCollision(GameObject GameObj){
         if (GameObj is GroundSprite){
-            if (y < GameObj.y +63){
-                y = GameObj.y-65;
+            if (y < GameObj.y +65){
+                y = GameObj.y;
+                onground = true;
             }
-//            if (x >= GameObj.x && x <= GameObj.x +32){
-//                x = GameObj.x - 1;
-//            }else if (x >= GameObj.x && x <= GameObj.x + 64){
-//                x = GameObj.x + 65;
-//            }
+            if (x >= GameObj.x && x <= GameObj.x +32){
+                x = GameObj.x-1;
+            }else if (x >= GameObj.x && x <= GameObj.x + 64){
+                x = GameObj.x + 65;
+            }
             
             
             

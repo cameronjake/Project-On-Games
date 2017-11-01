@@ -67,6 +67,8 @@ public class Player : Character
         return x;
     }
 
+ 
+    
     void Update()
     {
 //        Console.WriteLine("X: " + x + " Y: " + y);

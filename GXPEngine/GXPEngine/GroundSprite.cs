@@ -24,14 +24,31 @@ public class GroundSprite : Sprite{
         else{
             Yv += gravity;
         }
-//        if (Input.GetKeyDown(Key.W)){
-//            Yv = 23;
-//        }
-//        y -= Yv;
-//        else{
-//            Yv += gravity;
-//        }
+        if (Input.GetKeyDown(Key.W)){
+            Yv = -23;
+        }
+        if (Yv > 0){
+            Yv -= gravity;
+            y -= Yv;
+        }
+
+        else{
+            Yv += gravity;
+        }
+        
+        if (Xv > 0){
+            
+            MyGame.player.Mirror(true, false);
+            MyGame.player.direction = -1;
+        }
+        else if (Xv < 0){
+            MyGame.player.Mirror(false, false);
+            MyGame.player.direction = 1;
+        }
+        
     }
+    
+    
 
     public bool OnGround(){
         return true;

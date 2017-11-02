@@ -1,6 +1,6 @@
 ﻿using System.Xml;
 using GXPEngine;
-using static GXPEngine.Tileset;
+//using static GXPEngine.Tileset;
 
 
 public class Map{

@@ -51,10 +51,10 @@ using GXPEngine; // GXPEngine contains the engine
 
         
         
-        _map = new TmxMap("gamemap.tmx");
+        _map = new TmxMap("mirror.tmx");
         _version = _map.Version;
         _myTileset = _map.Tilesets[0];
-        _myLayer = _map.Layers[3];
+        _myLayer = _map.Layers[0];
         
         draw();
 
@@ -87,9 +87,9 @@ using GXPEngine; // GXPEngine contains the engine
     }
     
     public void draw(){
-        for (var i = 0; i < _map.Layers[3].Tiles.Count; i++)
+        for (var i = 0; i < _map.Layers[0].Tiles.Count; i++)
         {
-            int gid = _map.Layers[3].Tiles[i].Gid;
+            int gid = _map.Layers[0].Tiles[i].Gid;
 
             // Empty tile, do nothing
             if (gid == 0) {
@@ -97,8 +97,13 @@ using GXPEngine; // GXPEngine contains the engine
             }
             else {
                 int tileFrame = gid -1;
-                int row = tileFrame / (_myTileset.Tiles.Count / _myTileset.TileHeight);
-
+                if (_myTileset.TileHeight != 0)
+                {
+                    if (_myTileset.Tiles.Count / _myTileset.TileHeight != 0)
+                    {
+                        int row = tileFrame / (_myTileset.Tiles.Count / _myTileset.TileHeight);
+                    }
+                }
                 float x1 = (i % _map.Width) * _map.TileWidth;
                 float y1 = (float)Math.Floor(i / (double)_map.Width) * _map.TileHeight;
                 GroundSprite sprite = new GroundSprite(_myTileset.Tiles[tileFrame].Image.Source, x1, y1);

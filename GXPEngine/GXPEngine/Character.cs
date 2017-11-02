@@ -132,6 +132,6 @@ public class Character : AnimationSprite{
     }
 
     public bool OnGround(){
-        return this.y >= MyGame.groundY[(int) Utils.Clamp(this.x, 0, MyGame.main.width - 1)];
+        return this.y >= Level.groundY[(int) Utils.Clamp(this.x, 0, MyGame.main.width - 1)];
     }
 }

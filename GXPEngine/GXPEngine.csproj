@@ -48,9 +48,11 @@
     <Compile Include="GXPEngine\HUD.cs" />
     <Compile Include="GXPEngine\Player.cs" />
     <Compile Include="GXPEngine\Star.cs" />
+    <Compile Include="GXPEngine\StartScreen.cs" />
     <Compile Include="GXPEngine\TextBoard.cs" />
     <Compile Include="GXPEngine\Timer.cs" />
     <Compile Include="Layer.cs" />
+    <Compile Include="Level.cs" />
     <Compile Include="Map.cs" />
     <Compile Include="MyGame.cs" />
     <Compile Include="GXPEngine\Canvas.cs" />

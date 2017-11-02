@@ -38,12 +38,12 @@ public class GroundSprite : Sprite{
         
         if (Xv > 0){
             
-            MyGame.player.Mirror(true, false);
-            MyGame.player.direction = -1;
+            Level.player.Mirror(true, false);
+            Level.player.direction = -1;
         }
         else if (Xv < 0){
-            MyGame.player.Mirror(false, false);
-            MyGame.player.direction = 1;
+            Level.player.Mirror(false, false);
+            Level.player.direction = 1;
         }
         
     }

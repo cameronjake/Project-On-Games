@@ -13,7 +13,7 @@ public class Character : AnimationSprite
     private float Yv;
     private float yv;
     private bool jump;
-    private bool onground;
+    public bool onground;
     public int direction = -1;
 
     public Character(String filename, int cols, int rows, int frames) : base(filename, cols, rows, frames)
@@ -98,7 +98,7 @@ public class Character : AnimationSprite
 //        {
             if (GetType() == typeof(Player))
             {
-                if (Input.GetKey(Key.W))
+                if (Input.GetKeyDown(Key.W))
                 {
                     Console.WriteLine("jump");
                     Jump();
@@ -106,25 +106,24 @@ public class Character : AnimationSprite
             }
 //        }
 
-        if (x > Game.main.width - 32)
-        {
-            x = Game.main.width - 31;
-        }
-        else if (x < 31)
-        {
+//        if (x > Game.main.width - 32)
+//        {
+//            x = Game.main.width - 31;
+//        }
+//        else if (x < 31)
+//        {
 //            x = Game.main.width + 40;
-            x = 32;
-        }
+//            x = 32;
+//        }
     }
 
 
-    public void OnCollision(GameObject GameObj)
-    {
-        if (GameObj is GroundSprite)
-        {
-            GroundSprite groundSprite = GameObj as GroundSprite;
+    public void OnCollision(GameObject GameObj){
+        if (GameObj is GroundSprite){
+            GroundSprite groundSprite = (GroundSprite) GameObj;
             Rectangle rectangle =
                 new Rectangle(groundSprite.x, groundSprite.y, groundSprite.width, groundSprite.height);
+
             if (y <= rectangle.top)
             {
                 y = rectangle.y-1;
@@ -167,9 +166,7 @@ public class Character : AnimationSprite
 
 //            Console.WriteLine("x: " + GameObj.x + " y: " + GameObj.y);
         }
-        if (GameObj is Sprite)
-        {
-        }
+        if (GameObj is Sprite){ }
     }
 
     public int getDirection()

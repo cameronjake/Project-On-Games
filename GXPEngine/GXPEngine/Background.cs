@@ -1,28 +1,29 @@
 ﻿using System;
 using System.Collections;
 using GXPEngine;
+using GXPEngine.Managers;
+
 //using TiledSharp;
 
-public class Background : GameObject{
+public class Background : Sprite{
     public CollisionManager collisionManager;
     public static Array groundtiles;
+    private int Movespeed = 4;
+    private float Xv;
 
 
-    Sprite backgroundSprite;
+    GroundSprite backgroundSprite;
 
-    public Background(){
-        collisionManager = new CollisionManager();
+    public Background() : base("background middle 2.png"){
+//        SetOrigin(width,0);
+//        collisionManager = new CollisionManager();
 
-        
-       
-        
-        backgroundSprite = new Sprite("colored_desert.png"){
-            x = 0,
-            y = 0
-        };
-        Game.main.AddChild(backgroundSprite);
+    }
 
-       
+
+
+
+
 
 //        for (int i = 0; i < Game.main.width; i++){
 //            for (int j = 0; j < Game.main.height; j++){
@@ -59,16 +60,16 @@ public class Background : GameObject{
 //                }
 //            }
 //        }
-    }
-
-//    public void StayOnScreen(){
-//        if (backgroundSprite.x > Game.main.width + backgroundSprite.width * 0.5f){
-//            backgroundSprite.x = -backgroundSprite.width * 0.5f;
+    
+//    void Update(){
+//        Xv = (Convert.ToInt32(Input.GetKey(Key.A)) - Convert.ToInt32(Input.GetKey(Key.D))) * Movespeed;
+//        x += Xv;
+//        if (x < 0-width){
+//            x = Game.main.width;
+//            Background bg = new Background();
+//            bg.x = width;
+//        }else if (x > Game.main.width){
+//            x = 0;
 //        }
-//    }
-
-//    public void Update(){
-//        StayOnScreen();
-//        backgroundSprite.x += -5;
 //    }
 }

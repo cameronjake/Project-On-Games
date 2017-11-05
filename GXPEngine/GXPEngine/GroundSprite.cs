@@ -15,8 +15,13 @@ public class GroundSprite : Sprite{
 
     void Update(){
         Xv = (Convert.ToInt32(Input.GetKey(Key.A)) - Convert.ToInt32(Input.GetKey(Key.D))) * Movespeed;
-        x += Xv;
-
+//        x += Xv;
+        if (Level.Player.x > 100 || Level.Player.x < 1800){
+            x += Xv;
+        }
+        else{
+            Level.Player.x += Xv;
+        }
 //        if (OnGround()){
 ////            y = MyGame.groundY[(int) Utils.Clamp(this.x, 0, MyGame.main.width - 1)];
 //            Yv = 0;
@@ -38,12 +43,12 @@ public class GroundSprite : Sprite{
         
         if (Xv > 0){
             
-            Level.player.Mirror(true, false);
-            Level.player.direction = -1;
+            Level.Player.Mirror(true, false);
+            Level.Player.direction = -1;
         }
         else if (Xv < 0){
-            Level.player.Mirror(false, false);
-            Level.player.direction = 1;
+            Level.Player.Mirror(false, false);
+            Level.Player.direction = 1;
         }
         
     }

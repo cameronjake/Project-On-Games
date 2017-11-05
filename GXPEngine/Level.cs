@@ -8,7 +8,7 @@ using GXPEngine; // GXPEngine contains the engine
     public class Level : GameObject
     {
         public CollisionManager collisionManager;
-        public static Player player;
+        public static Player Player;
         public Enemy enemy;
         public Enemy enemy2;
         public Array groundtiles;
@@ -26,28 +26,32 @@ using GXPEngine; // GXPEngine contains the engine
     {
         
         
-//        Background background = new Background();
+        Background background = new Background();
+       
+        AddChild(background);
         ground = new Sprite("colored_desert_underground.png");
 //        AddChild(ground);
         getCollisions();
 //		collisionManager = new CollisionManager();
 
-//		background.collisionManager.Add(player);
-//		background.collisionManager.GetCurrentCollisions(player);
-        player = new Player("player_tilesheet.png", 8, 4, 33);
-        player.x = 500;
-        player.y = 100;
-        AddChild(player);
-        enemy = new Enemy("zombie_tilesheet.png", 9, 3, 24);
+//		background.collisionManager.Add(Player);
+//		background.collisionManager.GetCurrentCollisions(Player);
+        Player = new Player("player_tilesheet.png", 8, 4, 33);
+        Player.x = 960;
+        Player.y = 100;
+        AddChild(Player);
+        enemy = new Enemy("ghost-spritesheet.png", 9, 1, 9);
+        enemy.y = 10;
         AddChild(enemy);
-        enemy2 = new Enemy("zombie_tilesheet.png", 9, 3, 24);
+        enemy2 = new Enemy("ghost-spritesheet.png", 9, 1, 9);
         AddChild(enemy2);
-        enemy2.x = 60;
-        Camera cameron  = new Camera(player);
+        enemy2.x = 600;
+        enemy2.y = 10;
+        Camera cameron  = new Camera(Player);
         AddChild(cameron);
-        _hud = new HUD(player);
+        _hud = new HUD(Player);
         AddChild(_hud);
-        addStars();
+//        addStars();
 
         
         
@@ -64,7 +68,7 @@ using GXPEngine; // GXPEngine contains the engine
 //        map = Content.Load<Map>("desert");
 //    }
     public Character GetPlayer(){
-        return player;
+        return Player;
     }
 
     protected void Loadcontent(){
@@ -127,33 +131,33 @@ using GXPEngine; // GXPEngine contains the engine
     void Update(){
         // Check if spacebar is pushed, then spawn bullet
         if (Input.GetKeyDown(Key.SPACE)){
-            Bullet bullet = new Bullet(player);
+            Bullet bullet = new Bullet(Player);
             AddChild(bullet);
-            player.SetFrame(32);
+            Player.SetFrame(32);
             
         }
         
         enemy.MoveToPlayer(50,200);
         enemy2.MoveToPlayer(60,600);
         
-        while (Player.souls >= 2)
-        {
+//        while (Player.souls >= 2)
+//        {
             if (Input.GetKeyDown(Key.TAB))
             {
                 switchCharacter();
             }
-            else
-            {
-                break;
-            }            
-        }
-        //check if tab key is pushed, then change player as long as souls is more than or equal to two
+//            else
+//            {
+//                break;
+//            }            
+//        }
+        //check if tab key is pushed, then change Player as long as souls is more than or equal to two
     }
 
     void switchCharacter(){
 
         if (!delay){
-            player.changeplayer();
+            Player.changeplayer();
         }
         else return;
        
@@ -163,7 +167,7 @@ using GXPEngine; // GXPEngine contains the engine
     }
 
     public Player getPlayer(){
-        return player;
+        return Player;
     }
     
     void changeDelay(){

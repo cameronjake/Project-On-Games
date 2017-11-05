@@ -36,7 +36,7 @@ public class Player : Character
         else if (lumi)
         {
             changeToNoc();
-            souls-=2;
+            souls-=2;    
             Console.WriteLine("Souls: " + souls);
             AddChild(new Timer(SWITCH_LENGTH,changeToLumi));
             SetOrigin(40, 110);
@@ -45,7 +45,7 @@ public class Player : Character
 
     public void changeToNoc(){
         lumi = false;
-        ChangeSprite("zombie_tilesheet.png",9,3,24);
+        ChangeSprite("noc-spritesheet.png",8,4,33);
         SetOrigin(40, 110);
 
     }
